@@ -12,6 +12,12 @@
 
   <h1>Whack-a-mole! <span class="score">0</span></h1>
 
+  <div class="menu">
+    <input class="settings" type="image" alt="Menu" src="menu.png">
+    <div class="scoreboard">High Score: <span class="hs">0</span></div>
+    <button class="button__start" onClick="startGame()">Start!</button>
+  </div>
+
   <div class="game">
     <div class="hole hole1">
       <div class="mole"></div>
@@ -42,11 +48,7 @@
     </div>
   </div>
 
-  <div class="bottom">
-    <div class="scoreboard">
-      High Score: 0
-    </div>
-    <button class="button__start" onClick="startGame()">Start!</button>
+
   </div>
 
   <script src="script.js"></script>
