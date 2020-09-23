@@ -2,6 +2,7 @@ const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
 const moles = document.querySelectorAll('.mole');
 const hs = document.querySelector('.hs');
+const settings = document.querySelector('.settings');
 let prevHole;
 let isTimeout = true;
 let score;
@@ -62,4 +63,9 @@ function hit(e) {
     this.parentNode.classList.remove('up');
 }
 
+function settingsAction() {
+    this.classList.toggle('open');
+}
+
 moles.forEach((mole) => mole.addEventListener('click', hit));
+settings.addEventListener('click', settingsAction);

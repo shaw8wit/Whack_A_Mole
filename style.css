@@ -89,8 +89,18 @@ h1 {
   background: rgba(255, 255, 255, 0.25);
   border: 3px solid black;
   border-radius: 1rem;
+  cursor: pointer;
+  outline: none;
 }
 
 .settings {
   height: 50px;
+  transition: all 0.8s;
+  outline: none;
 }
+
+.settings.open {
+  transform: rotate(180deg);
+}
+
+.settings__list {}
