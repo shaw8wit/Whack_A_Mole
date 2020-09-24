@@ -13,15 +13,23 @@
   <h1>Whack-a-mole! <span class="score">0</span></h1>
 
   <div class="menu">
-    <input class="settings" type="image" alt="Menu" src="menu.png">
+    <div class="dropdown">
+      <input class="settings" type="image" alt="Menu" src="menu.png">
+      <form class="dropdown-menu">
+        <li>Set difficulty :<br>
+          <label><input type="radio" name="difficulty" value="0"> Amateur </label>
+          <label><input type="radio" name="difficulty" value="1"> Professional </label>
+          <label><input type="radio" name="difficulty" value="2"> Legendary </label>
+        </li>
+        <li>Set duration :<br>
+          <input type="range" class="duration" value="10" name="duration" min="5" max="30" step="1">
+        </li>
+        <button class="save-menu" type="submit">Save</button>
+      </form>
+    </div>
     <div class="scoreboard">High Score: <span class="hs">0</span></div>
     <button class="button__start" onClick="startGame()">Start!</button>
   </div>
-  <!-- <ul class="settings__list">
-    <li>Difficulty</li>
-    <li>Duration</li>
-  </ul> -->
-
   <div class="game">
     <div class="hole hole1">
       <div class="mole"></div>

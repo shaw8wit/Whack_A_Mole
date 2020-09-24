@@ -95,7 +95,7 @@ h1 {
 
 .settings {
   height: 50px;
-  transition: all 0.8s;
+  transition: all 0.5s;
   outline: none;
 }
 
@@ -103,4 +103,42 @@ h1 {
   transform: rotate(180deg);
 }
 
-.settings__list {}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 1rem;
+  z-index: 3;
+  list-style-type: none;
+  margin: 0px;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-menu>li {
+  padding: 1.5rem 2rem 0rem 2rem;
+  font-size: 3rem;
+}
+
+.duration {
+  width: 100%;
+}
+
+.save-menu {
+  float: right;
+  background: #95BF33;
+  margin: 0rem 2rem 1rem 2rem;
+  padding: 1rem 2.5rem;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+li>label {
+  font-size: 2.5rem;
+}

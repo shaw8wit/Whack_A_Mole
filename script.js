@@ -3,6 +3,7 @@ const scoreBoard = document.querySelector('.score');
 const moles = document.querySelectorAll('.mole');
 const hs = document.querySelector('.hs');
 const settings = document.querySelector('.settings');
+const menu = document.querySelector('.dropdown-menu');
 let prevHole;
 let isTimeout = true;
 let score;
@@ -64,8 +65,20 @@ function hit(e) {
 }
 
 function settingsAction() {
-    this.classList.toggle('open');
+    settings.classList.toggle('open');
+    menu.classList.toggle('show');
+}
+
+function saveSettings(e) {
+    e.preventDefault();
+    const formData = new FormData(menu);
+    for (var pair of formData.entries()) {
+        console.log(pair[0] + ': ' + pair[1]);
+    }
+    settingsAction();
+
 }
 
 moles.forEach((mole) => mole.addEventListener('click', hit));
 settings.addEventListener('click', settingsAction);
+menu.addEventListener('submit', saveSettings);
