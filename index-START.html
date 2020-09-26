@@ -21,8 +21,10 @@
           <label><input type="radio" name="difficulty" value="1"> Professional </label>
           <label><input type="radio" name="difficulty" value="2"> Legendary </label>
         </li>
-        <li>Set duration :<br>
-          <input type="range" class="duration" value="10" name="duration" min="5" max="30" step="1">
+        <li>Set duration :
+          <output id="amount" name="amount" for="rangeInput">10</output> sec.
+          <input oninput="amount.value=rangeInput.value" id="rangeInput" type="range" class="duration" value="10"
+            name="duration" min="5" max="30" step="1">
         </li>
         <button class="save-menu" type="submit">Save</button>
       </form>

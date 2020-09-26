@@ -1,15 +1,19 @@
+const hs = document.querySelector('.hs');
+const moles = document.querySelectorAll('.mole');
 const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
-const moles = document.querySelectorAll('.mole');
-const hs = document.querySelector('.hs');
 const settings = document.querySelector('.settings');
 const menu = document.querySelector('.dropdown-menu');
-let prevHole;
-let isTimeout = true;
+const difficulty = [
+    [350, 900],
+    [250, 700],
+    [150, 500]
+];
 let score;
+let prevHole;
 let runtime = 10;
-let start = 400;
-let end = 800;
+let isTimeout = true;
+let difficultyIndex = 0;
 let initialHs = localStorage.getItem('hs');
 let highscore = (initialHs == null) ? 0 : initialHs;
 hs.textContent = highscore;
@@ -29,7 +33,7 @@ function randomHole(holes) {
 }
 
 function showMole() {
-    const upTime = randomTime(start, end);
+    const upTime = randomTime(difficulty[difficultyIndex][0], difficulty[difficultyIndex][1]);
     const hole = randomHole(holes);
     hole.classList.add('up');
     setTimeout(() => {
@@ -73,10 +77,10 @@ function saveSettings(e) {
     e.preventDefault();
     const formData = new FormData(menu);
     for (var pair of formData.entries()) {
-        console.log(pair[0] + ': ' + pair[1]);
+        if (pair[0] === 'duration') runtime = pair[1];
+        if (pair[0] === 'difficulty') difficultyIndex = pair[1];
     }
     settingsAction();
-
 }
 
 moles.forEach((mole) => mole.addEventListener('click', hit));
