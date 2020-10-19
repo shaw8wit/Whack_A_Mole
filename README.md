@@ -3,7 +3,7 @@
 [![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![Github Followers](https://img.shields.io/github/followers/shaw8wit?label=Follow)
 
-Classic whack-a-mole game in JavaScript.
+Classic whack-a-mole game built in JavaScript with changeable settings.
 
 <img src="images/screenshots/1.png">
 
